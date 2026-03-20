@@ -8,15 +8,8 @@ from torchvision import transforms
 from torch.utils.data import DataLoader as dl
 transform=transforms.Compose([
     transforms.Resize((100,100)),
-    transforms.RandomAffine(
-        degrees=15,
-        translate=(0.2, 0.2),
-        scale=(0.7, 1.3)
-    ),
-    transforms.ColorJitter(
-        brightness=0.4,
-        contrast=0.4
-    ),
+    transforms.RandomAffine(degrees=15,translate=(0.2, 0.2),scale=(0.7, 1.3)),
+    transforms.ColorJitter(brightness=0.4,contrast=0.4),
     transforms.GaussianBlur(3, sigma=(0.1, 2.0)),
     transforms.ToTensor(),
     transforms.RandomErasing(p=0.3)
